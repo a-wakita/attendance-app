@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 Route::get('/attendance', [AttendanceController::class, 'index'])
     ->middleware('auth');
+Route::post('/attendance', [AttendanceController::class, 'store'])
+    ->middleware('auth');
