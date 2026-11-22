@@ -6,9 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class AttendanceRecord extends Model
-
 {
     use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'date',
+        'clock_in',
+        'clock_out',
+        'comment',
+    ];
 
     public function user()
     {
@@ -24,6 +31,4 @@ class AttendanceRecord extends Model
     {
         return $this->hasMany(AttendanceCorrectionRequest::class);
     }
-
-    
 }

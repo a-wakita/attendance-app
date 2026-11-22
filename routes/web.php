@@ -16,4 +16,7 @@ use App\Http\Controllers\User\AttendanceController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/attendance', [AttendanceController::class, 'index']);
+Route::get('/attendance', [AttendanceController::class, 'index'])
+    ->middleware('auth');
+Route::post('/attendance', [AttendanceController::class, 'store'])
+    ->middleware('auth');
